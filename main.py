@@ -180,3 +180,172 @@
 #<===================---------==============>
 
 
+
+# x = 1
+# while x < 10:
+#     print(x)
+#     x = x+1
+
+# a= 10
+# b= 11
+# s= 12
+
+# if a >b:
+#     print(a)
+# elif a < b and a >s and a < s:
+#     print(a)
+# elif b < a and b > s and b < s:
+#     print(b)
+# else:
+#     print(s)
+
+# a = 11
+# b = 12
+# s = 10 
+# if a < b < s or s < b < a :
+#     print(b)
+# elif b < a < s or s < a < b :
+#     print(a)
+# else :
+#     print(s)
+
+# for i in range(0,10,-2):
+#     print(i)
+
+
+# print('Сан киргиз')
+
+# a = int(input())
+
+# if a >100:
+#     print('100 дон чон сан иштеп жатат')
+# elif a>50 and a < 100:
+#     print('50 дон 100 го чейинки сан иштеп жатат')
+# elif a == 100:
+#     print('100 го барабар')
+# else:
+#     print('50 дон кичине сан иштеп жатат  ')
+
+
+
+
+
+# i = 2
+# while i < 10:
+#     i = i + 2
+#     print(i)
+
+
+# class game:
+#     name = 'Football'
+#     age = 153
+#     category = 'komand'
+
+#     def start_game(self):
+#         print(f'Game {self.age} started')
+
+# s = game()
+# s.start_game()
+
+
+ 
+# class telefon:
+#     name = "Iphone"
+#     model = "Iphone 13 pro"
+#     color = "Gold"
+
+#     def tel_name(self):
+#         print(f'Telefon name: {self.name}')
+
+# t = telefon()
+# t.tel_name()
+
+
+
+# class person:
+#     name = "Iskhak"
+#     age = 25
+#     country = "kyrgyz"
+
+#     def person_info(self):
+#         print(f"Person info:  {self.name}")
+
+
+# p = person()
+# p.person_info()
+
+
+
+# class Cars:
+#     def __init__(self,name,age):
+#         self.name = name
+#         self.age = age
+
+# bmw = Cars('bmw M5',100)
+# print(f'Cars model:{bmw.name},age is {bmw.age}')
+
+
+
+#ООП окуп келуу 
+
+
+#<Полиморфизм (Polymorphism)>
+
+
+class Cat:
+    def speak(self):
+        return "Мяу-мяу!"
+
+class Dog:
+    def speak(self):
+        return "Гав-гав!"
+
+animals = [Cat(), Dog()]
+for animal in animals:
+    print(animal.speak())  
+
+
+
+#<Инкапсуляция (Encapsulation)>
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand       # Публичный атрибут
+        self.__model = model     # Приватный атрибут (жашыруун)
+
+    def get_model(self):
+        return self.__model      # Приваттык өзгөрмөгө жетүү методу
+
+car = Car("Toyota", "Camry")
+print(car.brand)        
+print(car.get_model())  
+
+#<Мурастоо (Inheritance)>
+class Animal:
+    def speak(self):
+        return "Дыбыш чыгарат"
+
+class Dog(Animal):  # Мурастоо
+    def speak(self):
+        return "Гав-гав!"
+
+dog = Dog()
+print(dog.speak())  
+
+#<Абстракция (Abstraction)>
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+circle = Circle(5)
+print(circle.area())  # 78.5
+
